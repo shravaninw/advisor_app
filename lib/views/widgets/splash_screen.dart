@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import '../../ui.dart';
-import 'bot_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -15,9 +14,10 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    Timer(Duration(seconds: 2), () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => InitialPage()));
+    Timer(Duration(seconds: 3), () {
+      context.navigation.onBoarding();
+      // Navigator.push(
+      //     context, MaterialPageRoute(builder: (context) => InitialPage()));
     });
   }
 

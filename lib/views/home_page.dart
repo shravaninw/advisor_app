@@ -13,6 +13,9 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with AppProviderMixin<HomePage> {
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,12 +44,6 @@ class _HomePageState extends State<HomePage> with AppProviderMixin<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
-            const AppText(
-              'You have pushed the button this many times:',
-            ),
-            AppHeadLine1(
-              '${appState.count}',
-            ),
             AppPrimaryButton(
               onPressed: () {},
               child: AppText('button'),
@@ -58,14 +55,36 @@ class _HomePageState extends State<HomePage> with AppProviderMixin<HomePage> {
             FormTile(
               title: 'email',
               textField: AppTextFormField(
+                onChanged: (String? value) {
+                  email = value ?? '';
+                  setState(() {});
+                },
                 hintText: 'email',
               ),
             ),
+            FormTile(
+              title: 'Password',
+              textField: AppTextFormField(
+                hintText: 'password',
+                onChanged: (String? value) {
+                  password = value ?? '';
+                  setState(() {});
+                },
+              ),
+            ),
             NextPrimaryButton(
-              onPressed: () {},
+              onPressed: () async {
+                await context.appViewModel
+                    .signIn(email: 'me@iamharsh.dev', password: 'saymemyname');
+              },
             ),
             NextSecondaryButton(
-              onPressed: () {},
+              onPressed: () async {
+                try {
+                  await context.appViewModel
+                      .forgetPassword(email: 'me@iamharshgmail.dev');
+                } catch (e) {}
+              },
             ),
           ],
         ),

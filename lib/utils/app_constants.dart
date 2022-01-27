@@ -11,9 +11,9 @@ abstract class AppColors {
   final Color secondary = const Color(0xFF3FAB7C);
   final Color lightYellow = const Color(0xFFFFF5C9);
   final Color green = const Color(0xFF009688);
-  final Color bgColor = const Color(0xFFF4F1FD);
+  final Color bgColor = const Color(0xFFF2F5FD);
   final Color primaryDark = const Color(0xFF3300CC);
   final Color textFieldBg = const Color(0xFF27048D).withOpacity(0.3);
   final Color red = Colors.red;
-  final Color hintTextColor = const Color(0xFF342A4B);
+  final Color hintTextColor = const Color(0xFF342A4B).withOpacity(0.5);
 }

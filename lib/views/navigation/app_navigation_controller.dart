@@ -1,8 +1,12 @@
 import 'package:advisor_app/core/navigation/navigation.dart';
-import 'package:advisor_app/main_page.dart';
 import 'package:advisor_app/ui.dart';
+import 'package:advisor_app/views/auth/login.dart';
 import 'package:advisor_app/views/navigation/app_navigation_state.dart';
+import 'package:advisor_app/views/widgets/onboarding_pages.dart';
+import 'package:advisor_app/views/widgets/splash_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../main_page.dart';
 
 class AppNavigationController extends AppFlowController<AppNavigationState> {
   AppNavigationController() : super(AppNavigationState());
@@ -12,6 +16,19 @@ class AppNavigationController extends AppFlowController<AppNavigationState> {
 
   void updateUserName() {
     state = state.rebuild((AppNavigationStateBuilder b) => b.value = null);
+  }
+
+  void login() {
+    state = state.rebuild((AppNavigationStateBuilder b) => b.value = 'login');
+  }
+
+  void onBoarding() {
+    state =
+        state.rebuild((AppNavigationStateBuilder b) => b.value = 'onBoarding');
+  }
+
+  void home() {
+    state = state.rebuild((AppNavigationStateBuilder b) => b.value = 'home');
   }
 
   void submit() {
@@ -24,10 +41,18 @@ class AppNavigationController extends AppFlowController<AppNavigationState> {
     List<Page<Object>> currentPages,
   ) {
     return <Page<Object>>[
-      const MaterialPage<Object>(child: MainPage()),
-      if (state.value == null)
+      const MaterialPage<Object>(child: SplashScreen()),
+      if (state.value == 'login')
         const MaterialPage<Object>(
-          child: _NextPage(),
+          child: LoginPage(),
+        ),
+      if (state.value == 'onBoarding')
+        MaterialPage<Object>(
+          child: OnBoardingPages(),
+        ),
+      if (state.value == 'home')
+        MaterialPage<Object>(
+          child: MainPage(),
         ),
     ];
   }

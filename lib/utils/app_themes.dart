@@ -21,7 +21,7 @@ abstract class AppTheme {
           borderRadius: BorderRadius.circular(8),
           borderSide: BorderSide(color: _colors.primary),
         ),
-        hintStyle: TextStyle(color: _colors.hintTextColor),
+        hintStyle: TextStyle(fontSize: 24, color: _colors.hintTextColor),
         fillColor: _colors.textFieldBg),
   );
   ThemeData darkTheme = ThemeData(

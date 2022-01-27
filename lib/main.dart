@@ -1,3 +1,5 @@
+import 'package:advisor_app/data/repository.dart';
+import 'package:advisor_app/data/repository_provider.dart';
 import 'package:advisor_app/view_model/app_view_model.dart';
 import 'package:advisor_app/views/navigation/app_navigation_controller.dart';
 import 'package:advisor_app/views/navigation/app_navigation_state.dart';
@@ -7,11 +9,17 @@ import 'core/navigation/navigation.dart';
 import 'ui.dart';
 
 void main() {
+  final AppRepository repo = AppRepository();
+
   runApp(
-    AppProvider(
-      child: StateNotifierProvider<AppNavigationController, AppNavigationState>(
-        create: (_) => AppNavigationController(),
-        child: const MyApp(),
+    AppRepositoryProvider(
+      repo: repo,
+      child: AppProvider(
+        child:
+            StateNotifierProvider<AppNavigationController, AppNavigationState>(
+          create: (_) => AppNavigationController(),
+          child: const MyApp(),
+        ),
       ),
     ),
   );

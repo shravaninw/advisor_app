@@ -81,9 +81,9 @@ class OnBoardingPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               TextButton(
-                  style: ButtonStyle(
-                      foregroundColor: MaterialStateProperty.all(colors.black)),
-                  onPressed: () {},
+                  onPressed: () {
+                    context.navigation.login();
+                  },
                   child: buttonText),
               button,
             ].mapPadding(

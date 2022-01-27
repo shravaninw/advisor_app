@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:advisor_app/core/exceptions/exceptions.dart';
+import 'package:advisor_app/model/api_error.dart';
 import 'package:advisor_app/shared.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
@@ -16,6 +18,14 @@ extension ResponseUtils on Response {
   Map<String, dynamic>? get jsonMap => json as Map<String, dynamic>?;
 
   List<dynamic>? get jsonList => json as List<dynamic>?;
+
+  APIException get apiError {
+    try {
+      return APIException(apiError: ApiError.fromJson(jsonMap!));
+    } catch (e, s) {
+      return APIException(error: e, stackTrace: s);
+    }
+  }
 }
 
 abstract class ApiClient extends IOClient {

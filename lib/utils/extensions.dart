@@ -1,10 +1,15 @@
 import 'package:advisor_app/shared.dart';
 
+import 'app_icons.dart';
 import 'app_themes.dart';
 
 // ignore: avoid_classes_with_only_static_members
 class _AppAssets extends AppAssets {
   static final _AppAssets instance = _AppAssets();
+}
+
+class _AppIcons extends AppIcons {
+  static final _AppIcons instance = _AppIcons();
 }
 
 // ignore: avoid_classes_with_only_static_members
@@ -34,6 +39,7 @@ extension ObjectUtils on Object {
   AppRoutes get routes => _AppRoutes.instance;
 
   AppColors get colors => _AppColors.instance;
+  AppIcons get icons => _AppIcons.instance;
 
   AppTheme get theme => _AppTheme.instance;
 }

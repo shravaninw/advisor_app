@@ -40,19 +40,19 @@ class _MainPageState extends State<MainPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: AppIcon(Icons.search),
+            icon: AppIcon(icons.search),
             label: 'prospects',
           ),
           BottomNavigationBarItem(
-            icon: AppIcon(Icons.chat),
+            icon: AppIcon(icons.chat),
             label: 'chat',
           ),
           BottomNavigationBarItem(
-            icon: AppIcon(Icons.link),
+            icon: AppIcon(icons.link),
             label: 'Your link',
           ),
           BottomNavigationBarItem(
-            icon: AppIcon(Icons.more),
+            icon: AppIcon(icons.more),
             label: 'More',
           ),
         ],

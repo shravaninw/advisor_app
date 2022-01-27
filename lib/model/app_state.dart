@@ -1,3 +1,4 @@
+import 'package:advisor_app/model/auth_login.dart';
 import 'package:advisor_app/model/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
@@ -20,10 +21,5 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   static Serializer<AppState> get serializer => _$appStateSerializer;
 
-  static void _initializeBuilder(AppStateBuilder b) {
-    b.count = 0;
-  }
-
-  @nullable
-  int? get count;
+  AuthLogin? get authLogin;
 }

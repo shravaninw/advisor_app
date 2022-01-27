@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '../../ui.dart';
 
 class AppProgressIndicator extends StatelessWidget {
   const AppProgressIndicator({Key? key, this.alignment}) : super(key: key);
@@ -9,7 +9,9 @@ class AppProgressIndicator extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: alignment,
-      child: const CircularProgressIndicator(),
+      child: CircularProgressIndicator(
+        color: colors.primary,
+      ),
     );
   }
 }

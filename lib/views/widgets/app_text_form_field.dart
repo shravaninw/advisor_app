@@ -17,11 +17,12 @@ class AppTextFormField extends StatelessWidget {
     this.keyboardType,
     this.isObscure = false,
     this.label,
+    this.suffix,
   }) : super(key: key);
 
   final String? hintText;
   final double? borderRadius;
-  final Widget? prefix;
+  final Widget? prefix, suffix;
   final Widget? label;
 
   final TextEditingController? controller;
@@ -47,9 +48,10 @@ class AppTextFormField extends StatelessWidget {
       validator: validator,
       inputFormatters: inputFormatters,
       decoration: InputDecoration(
+        suffixIcon: suffix,
         contentPadding: EdgeInsets.all(24),
-        border: OutlineInputBorder(
-          borderSide: BorderSide(),
+        border: UnderlineInputBorder(
+          borderSide: BorderSide(style: BorderStyle.solid),
           borderRadius: BorderRadius.circular(
             8,
           ),
