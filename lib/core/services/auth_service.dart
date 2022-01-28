@@ -1,5 +1,4 @@
-import 'package:advisor_app/model/auth_login.dart';
-
+import '../../model/auth_login.dart';
 import 'app_service.dart';
 
 abstract class AuthService extends AppService {

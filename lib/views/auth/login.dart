@@ -50,9 +50,25 @@ class _LoginPageState extends State<LoginPage>
                           return 'Field Cannot be empty';
                         return null;
                       },
+                      onChanged: (String? value) {
+                        email = value ?? '';
+                        setState(() {});
+                      },
+                      onSaved: (String? value) {
+                        email = value ?? '';
+                        setState(() {});
+                      },
                       hintText: 'Email',
                     ),
                     AppTextFormField(
+                      onChanged: (String? value) {
+                        password = value ?? '';
+                        setState(() {});
+                      },
+                      onSaved: (String? value) {
+                        password = value ?? '';
+                        setState(() {});
+                      },
                       isObscure: isPasswordObscure,
                       validator: (String? value) {
                         if (value == null || value.isEmpty)
@@ -82,6 +98,7 @@ class _LoginPageState extends State<LoginPage>
                           onPressed: () async {
                             try {
                               if (validateForm()) {
+                                saveForm();
                                 setLoading();
                                 print(loading);
                                 await context.appViewModel

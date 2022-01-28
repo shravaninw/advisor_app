@@ -32,6 +32,13 @@ class _$ApiErrorSerializer implements StructuredSerializer<ApiError> {
     value = object.message;
     if (value != null) {
       result
+        ..add('message')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.messsage;
+    if (value != null) {
+      result
         ..add('messsage')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
@@ -54,8 +61,12 @@ class _$ApiErrorSerializer implements StructuredSerializer<ApiError> {
           result.status = serializers.deserialize(value,
               specifiedType: const FullType(int)) as int?;
           break;
-        case 'messsage':
+        case 'message':
           result.message = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'messsage':
+          result.messsage = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'success':
@@ -75,12 +86,16 @@ class _$ApiError extends ApiError {
   @override
   final String? message;
   @override
+  final String? messsage;
+  @override
   final bool success;
 
   factory _$ApiError([void Function(ApiErrorBuilder)? updates]) =>
       (new ApiErrorBuilder()..update(updates)).build();
 
-  _$ApiError._({this.status, this.message, required this.success}) : super._() {
+  _$ApiError._(
+      {this.status, this.message, this.messsage, required this.success})
+      : super._() {
     BuiltValueNullFieldError.checkNotNull(success, 'ApiError', 'success');
   }
 
@@ -97,13 +112,15 @@ class _$ApiError extends ApiError {
     return other is ApiError &&
         status == other.status &&
         message == other.message &&
+        messsage == other.messsage &&
         success == other.success;
   }
 
   @override
   int get hashCode {
-    return $jf(
-        $jc($jc($jc(0, status.hashCode), message.hashCode), success.hashCode));
+    return $jf($jc(
+        $jc($jc($jc(0, status.hashCode), message.hashCode), messsage.hashCode),
+        success.hashCode));
   }
 
   @override
@@ -111,6 +128,7 @@ class _$ApiError extends ApiError {
     return (newBuiltValueToStringHelper('ApiError')
           ..add('status', status)
           ..add('message', message)
+          ..add('messsage', messsage)
           ..add('success', success))
         .toString();
   }
@@ -127,6 +145,10 @@ class ApiErrorBuilder implements Builder<ApiError, ApiErrorBuilder> {
   String? get message => _$this._message;
   set message(String? message) => _$this._message = message;
 
+  String? _messsage;
+  String? get messsage => _$this._messsage;
+  set messsage(String? messsage) => _$this._messsage = messsage;
+
   bool? _success;
   bool? get success => _$this._success;
   set success(bool? success) => _$this._success = success;
@@ -138,6 +160,7 @@ class ApiErrorBuilder implements Builder<ApiError, ApiErrorBuilder> {
     if ($v != null) {
       _status = $v.status;
       _message = $v.message;
+      _messsage = $v.messsage;
       _success = $v.success;
       _$v = null;
     }
@@ -161,6 +184,7 @@ class ApiErrorBuilder implements Builder<ApiError, ApiErrorBuilder> {
         new _$ApiError._(
             status: status,
             message: message,
+            messsage: messsage,
             success: BuiltValueNullFieldError.checkNotNull(
                 success, 'ApiError', 'success'));
     replace(_$result);

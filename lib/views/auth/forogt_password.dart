@@ -38,6 +38,14 @@ class _ForgotPasswordState extends State<ForgotPassword>
                 ),
               ),
               AppTextFormField(
+                onChanged: (String? value) {
+                  email = value ?? '';
+                  setState(() {});
+                },
+                onSaved: (String? value) {
+                  email = value ?? '';
+                  setState(() {});
+                },
                 validator: (String? value) {
                   if (value == null || value.isEmpty)
                     return 'Field Cannot be empty';
@@ -51,6 +59,7 @@ class _ForgotPasswordState extends State<ForgotPassword>
                       onPressed: () async {
                         try {
                           if (validateForm()) {
+                            saveForm();
                             setLoading();
                             print(loading);
                             final String message = await context.appViewModel

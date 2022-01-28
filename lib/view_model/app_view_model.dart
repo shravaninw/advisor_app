@@ -38,6 +38,8 @@ class AppViewModel extends AppStateNotifier<AppState>
     required String email,
     required String password,
   }) async {
+    print(email);
+
     final AuthLogin? u =
         await authService.signIn(email: email, password: password);
     state = state.rebuild((AppStateBuilder b) {

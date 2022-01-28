@@ -1,4 +1,4 @@
-import 'package:advisor_app/model/api_error.dart';
+import '../../model/api_error.dart';
 
 abstract class AppException implements Exception {}
 

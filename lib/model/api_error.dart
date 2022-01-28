@@ -23,10 +23,13 @@ abstract class ApiError implements Built<ApiError, ApiErrorBuilder> {
   @BuiltValueField(wireName: 'status')
   int? get status;
 
-  @BuiltValueField(wireName: 'messsage')
+  @BuiltValueField(wireName: 'message')
   String? get message;
+
+  @BuiltValueField(wireName: 'messsage')
+  String? get messsage;
 
   bool get success;
 
-  String get error => message ?? 'Something went wrong';
+  String get error => message ?? messsage ?? 'Something went wrong';
 }

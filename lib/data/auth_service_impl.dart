@@ -47,6 +47,8 @@ class AuthServiceImpl implements AuthService {
     required String email,
     required String password,
   }) async {
+    print(email);
+    print(password);
     final Response response = await _client.post(Uri.parse(_urls._login),
         body: jsonEncode(<String, dynamic>{
           'email': email,
