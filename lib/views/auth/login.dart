@@ -27,11 +27,10 @@ class _LoginPageState extends State<LoginPage>
         padding: const EdgeInsets.all(16.0),
         child: Form(
           key: formKey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 160, 24, 0),
+                padding: const EdgeInsets.fromLTRB(0, 120, 24, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -41,36 +40,39 @@ class _LoginPageState extends State<LoginPage>
                   ].mapPadding(padding: EdgeInsets.all(8)),
                 ),
               ),
-              Column(
-                children: [
-                  AppTextFormField(
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty)
-                        return 'Field Cannot be empty';
-                      return null;
-                    },
-                    hintText: 'Email',
-                  ),
-                  AppTextFormField(
-                    isObscure: isPasswordObscure,
-                    validator: (String? value) {
-                      if (value == null || value.isEmpty)
-                        return 'Field Cannot be empty';
-                      return null;
-                    },
-                    suffix: IconButton(
-                      onPressed: () {
-                        isPasswordObscure = !isPasswordObscure;
-                        setState(() {});
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 40.0),
+                child: Column(
+                  children: [
+                    AppTextFormField(
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty)
+                          return 'Field Cannot be empty';
+                        return null;
                       },
-                      icon: Icon(
-                        isPasswordObscure ? icons.view : icons.viewOff,
-                        color: colors.hintTextColor,
-                      ),
+                      hintText: 'Email',
                     ),
-                    hintText: 'Password',
-                  ),
-                ].mapPadding(padding: EdgeInsets.all(8)),
+                    AppTextFormField(
+                      isObscure: isPasswordObscure,
+                      validator: (String? value) {
+                        if (value == null || value.isEmpty)
+                          return 'Field Cannot be empty';
+                        return null;
+                      },
+                      suffix: IconButton(
+                        onPressed: () {
+                          isPasswordObscure = !isPasswordObscure;
+                          setState(() {});
+                        },
+                        icon: Icon(
+                          isPasswordObscure ? icons.view : icons.viewOff,
+                          color: colors.hintTextColor,
+                        ),
+                      ),
+                      hintText: 'Password',
+                    ),
+                  ].mapPadding(padding: EdgeInsets.all(8)),
+                ),
               ),
               Column(
                 children: [
