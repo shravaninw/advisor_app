@@ -33,7 +33,6 @@ class AuthServiceImpl implements AuthService {
             }));
     if (response.isSuccess) {
       final String results = response.jsonMap!['message'] as String;
-
       print(results);
       return results;
     }

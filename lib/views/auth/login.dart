@@ -17,6 +17,7 @@ class _LoginPageState extends State<LoginPage>
   String email = '';
 
   String password = '';
+  bool isPasswordObscure = true;
 
   @override
   Widget build(BuildContext context) {
@@ -51,16 +52,19 @@ class _LoginPageState extends State<LoginPage>
                     hintText: 'Email',
                   ),
                   AppTextFormField(
-                    isObscure: true,
+                    isObscure: isPasswordObscure,
                     validator: (String? value) {
                       if (value == null || value.isEmpty)
                         return 'Field Cannot be empty';
                       return null;
                     },
                     suffix: IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        isPasswordObscure = !isPasswordObscure;
+                        setState(() {});
+                      },
                       icon: Icon(
-                        icons.view,
+                        isPasswordObscure ? icons.view : icons.viewOff,
                         color: colors.hintTextColor,
                       ),
                     ),
@@ -92,13 +96,8 @@ class _LoginPageState extends State<LoginPage>
                           },
                         ),
                   TextButton(
-                    onPressed: () async {
-                      try {
-                        if (validateForm()) {
-                          await context.appViewModel.forgetPassword(
-                              email: 'shravani@purplerocket.io');
-                        }
-                      } catch (e) {}
+                    onPressed: () {
+                      context.navigation.forgotPassword();
                     },
                     child: AppText(
                       'Forgot Password?',

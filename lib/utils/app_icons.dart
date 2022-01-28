@@ -13,7 +13,9 @@ abstract class AppIcons {
 
   IconData get image => Icons.image_outlined;
 
-  IconData get view => Icons.remove_red_eye;
+  IconData get view => Icons.visibility;
+
+  IconData get viewOff => Icons.visibility_off;
 
   IconData get search => Icons.search;
 

@@ -1,5 +1,6 @@
 import 'package:advisor_app/core/navigation/navigation.dart';
 import 'package:advisor_app/ui.dart';
+import 'package:advisor_app/views/auth/forogt_password.dart';
 import 'package:advisor_app/views/auth/login.dart';
 import 'package:advisor_app/views/navigation/app_navigation_state.dart';
 import 'package:advisor_app/views/widgets/onboarding_pages.dart';
@@ -27,6 +28,11 @@ class AppNavigationController extends AppFlowController<AppNavigationState> {
         state.rebuild((AppNavigationStateBuilder b) => b.value = 'onBoarding');
   }
 
+  void forgotPassword() {
+    state = state
+        .rebuild((AppNavigationStateBuilder b) => b.value = 'forgotPassword');
+  }
+
   void home() {
     state = state.rebuild((AppNavigationStateBuilder b) => b.value = 'home');
   }
@@ -49,6 +55,10 @@ class AppNavigationController extends AppFlowController<AppNavigationState> {
       if (state.value == 'onBoarding')
         MaterialPage<Object>(
           child: OnBoardingPages(),
+        ),
+      if (state.value == 'forgotPassword')
+        MaterialPage<Object>(
+          child: ForgotPassword(),
         ),
       if (state.value == 'home')
         MaterialPage<Object>(

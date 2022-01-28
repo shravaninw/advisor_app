@@ -49,7 +49,8 @@ class AppViewModel extends AppStateNotifier<AppState>
     await authService.signOut();
   }
 
-  Future<void> forgetPassword({required String email}) async {
-    await authService.forgetPassword(email: email);
+  Future<String> forgetPassword({required String email}) async {
+    final String message = await authService.forgetPassword(email: email);
+    return message;
   }
 }
