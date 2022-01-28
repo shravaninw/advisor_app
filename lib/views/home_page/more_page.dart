@@ -8,6 +8,7 @@ class MorePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       appBar: CustomAppBar(
+        leading: null,
         toolbarHeight: 80,
         titleSpacing: 16,
         centerTitle: false,
@@ -34,6 +35,7 @@ class MorePage extends StatelessWidget {
 
   Card moreCardTile({required String title, required IconData iconData}) {
     return Card(
+      elevation: 2,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(

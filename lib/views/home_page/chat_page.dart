@@ -8,6 +8,7 @@ class ChatPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScaffold(
       appBar: CustomAppBar(
+        leading: null,
         toolbarHeight: 80,
         titleSpacing: 16,
         centerTitle: false,

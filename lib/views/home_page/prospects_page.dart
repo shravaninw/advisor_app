@@ -22,6 +22,7 @@ class _ProspectsPageState extends State<ProspectsPage>
   Widget build(BuildContext context) {
     return AppScaffold(
       appBar: CustomAppBar(
+        leading: null,
         toolbarHeight: 80,
         titleSpacing: 16,
         centerTitle: false,

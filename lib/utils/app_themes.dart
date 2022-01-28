@@ -13,6 +13,13 @@ abstract class AppTheme {
     brightness: Brightness.light,
     primaryColor: _colors.primary,
     textTheme: TextTheme(),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      onPrimary: _colors.white,
+      primary: _colors.primary,
+      minimumSize: Size(164, 58),
+    )),
     textButtonTheme: TextButtonThemeData(
         style: ButtonStyle(
             foregroundColor: MaterialStateProperty.all(_colors.black))),

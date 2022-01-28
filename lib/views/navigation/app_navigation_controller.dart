@@ -4,6 +4,7 @@ import 'package:advisor_app/views/auth/forogt_password.dart';
 import 'package:advisor_app/views/auth/login.dart';
 import 'package:advisor_app/views/navigation/app_navigation_state.dart';
 import 'package:advisor_app/views/widgets/onboarding_pages.dart';
+import 'package:advisor_app/views/widgets/splash_screen.dart';
 
 import '../../main_page.dart';
 
@@ -45,7 +46,7 @@ class AppNavigationController extends AppFlowController<AppNavigationState> {
     List<Page<Object>> currentPages,
   ) {
     return <Page<Object>>[
-      const MaterialPage<Object>(child: MainPage()),
+      const MaterialPage<Object>(child: SplashScreen()),
       if (state.value == 'login')
         const MaterialPage<Object>(
           child: LoginPage(),
