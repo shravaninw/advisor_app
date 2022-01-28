@@ -1,7 +1,8 @@
-import 'package:advisor_app/model/auth_login.dart';
-import 'package:advisor_app/model/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+
+import 'auth_login.dart';
+import 'serializers.dart';
 
 part 'app_state.g.dart';
 

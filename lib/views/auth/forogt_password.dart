@@ -1,8 +1,7 @@
-import 'package:advisor_app/core/exceptions/exceptions.dart';
-import 'package:advisor_app/views/widgets/app_buttons.dart';
-import 'package:advisor_app/views/widgets/app_text_form_field.dart';
-
+import '../../core/exceptions/exceptions.dart';
 import '../../ui.dart';
+import '../widgets/app_buttons.dart';
+import '../widgets/app_text_form_field.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class _ForgotPasswordState extends State<ForgotPassword>
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      backgroundColor: colors.bgColor,
+      appBar: CustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(
@@ -27,7 +26,7 @@ class _ForgotPasswordState extends State<ForgotPassword>
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(0, 80, 24, 0),
+                padding: const EdgeInsets.fromLTRB(0, 60, 24, 0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

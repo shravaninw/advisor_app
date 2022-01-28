@@ -1,12 +1,12 @@
-import 'package:advisor_app/data/repository.dart';
-import 'package:advisor_app/data/repository_provider.dart';
-import 'package:advisor_app/view_model/app_view_model.dart';
-import 'package:advisor_app/views/navigation/app_navigation_controller.dart';
-import 'package:advisor_app/views/navigation/app_navigation_state.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 
 import 'core/navigation/navigation.dart';
+import 'data/repository.dart';
+import 'data/repository_provider.dart';
 import 'ui.dart';
+import 'view_model/app_view_model.dart';
+import 'views/navigation/app_navigation_controller.dart';
+import 'views/navigation/app_navigation_state.dart';
 
 void main() {
   final AppRepository repo = AppRepository();

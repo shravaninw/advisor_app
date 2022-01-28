@@ -1,4 +1,4 @@
-import 'package:advisor_app/ui.dart';
+import '../../ui.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage(

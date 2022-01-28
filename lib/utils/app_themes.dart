@@ -1,10 +1,15 @@
-import 'package:advisor_app/ui.dart';
-
-import 'app_constants.dart';
+import '../ui.dart';
 
 abstract class AppTheme {
   static final AppColors _colors = 0.colors;
   ThemeData lightTheme = ThemeData(
+    cardColor: _colors.cardColor,
+    scaffoldBackgroundColor: _colors.bgColor,
+    appBarTheme: AppBarTheme(
+      iconTheme: IconThemeData(
+        color: _colors.black,
+      ),
+    ),
     brightness: Brightness.light,
     primaryColor: _colors.primary,
     textTheme: TextTheme(),

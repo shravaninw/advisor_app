@@ -12,6 +12,7 @@ class CustomAppBar extends AppBar {
     double elevation = 0.0,
     ShapeBorder? shape,
     Color? backgroundColor,
+    Color? foregroundColor,
     Brightness? brightness,
     IconThemeData? iconTheme,
     IconThemeData? actionsIconTheme,
@@ -21,6 +22,7 @@ class CustomAppBar extends AppBar {
     double titleSpacing = NavigationToolbar.kMiddleSpacing,
     double toolbarOpacity = 1.0,
     double bottomOpacity = 1.0,
+    double? toolbarHeight,
   }) : super(
           key: key,
           leading: leading,
@@ -32,6 +34,7 @@ class CustomAppBar extends AppBar {
           elevation: elevation,
           shape: shape,
           backgroundColor: backgroundColor ?? Colors.transparent,
+          foregroundColor: foregroundColor ?? Colors.black,
           brightness: brightness,
           iconTheme: iconTheme,
           actionsIconTheme: actionsIconTheme,
@@ -41,5 +44,6 @@ class CustomAppBar extends AppBar {
           titleSpacing: titleSpacing,
           toolbarOpacity: toolbarOpacity,
           bottomOpacity: bottomOpacity,
+          toolbarHeight: toolbarHeight,
         );
 }

@@ -1,6 +1,7 @@
-import 'package:advisor_app/model/serializers.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+
+import 'serializers.dart';
 
 part 'address.g.dart';
 

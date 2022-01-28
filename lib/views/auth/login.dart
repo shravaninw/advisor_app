@@ -1,9 +1,7 @@
-import 'package:advisor_app/core/exceptions/exceptions.dart';
-import 'package:advisor_app/views/widgets/app_buttons.dart';
-import 'package:advisor_app/views/widgets/app_text_form_field.dart';
-import 'package:advisor_app/views/widgets/extensions.dart';
-
+import '../../core/exceptions/exceptions.dart';
 import '../../ui.dart';
+import '../widgets/app_buttons.dart';
+import '../widgets/app_text_form_field.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -22,7 +20,6 @@ class _LoginPageState extends State<LoginPage>
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      backgroundColor: colors.bgColor,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Form(

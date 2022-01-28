@@ -1,11 +1,11 @@
-import 'package:advisor_app/core/services/auth_service.dart';
-import 'package:advisor_app/core/view_model/view_model.dart';
-import 'package:advisor_app/data/repository.dart';
-import 'package:advisor_app/data/repository_provider.dart';
-import 'package:advisor_app/model/app_state.dart';
-import 'package:advisor_app/model/auth_login.dart';
-import 'package:advisor_app/provider/app_state_notifier.dart';
-import 'package:advisor_app/ui.dart';
+import '../core/services/auth_service.dart';
+import '../core/view_model/view_model.dart';
+import '../data/repository.dart';
+import '../data/repository_provider.dart';
+import '../model/app_state.dart';
+import '../model/auth_login.dart';
+import '../provider/app_state_notifier.dart';
+import '../ui.dart';
 import 'package:flutter_state_notifier/flutter_state_notifier.dart';
 import 'package:state_notifier/state_notifier.dart';
 

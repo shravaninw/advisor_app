@@ -7,13 +7,17 @@ abstract class AppIcons {
 
   IconData get chat => Icons.chat_bubble_outline_rounded;
 
-  IconData get bar => Icons.poll_outlined;
+  IconData get chart => Icons.poll_outlined;
 
   IconData get link => Icons.link_outlined;
 
   IconData get image => Icons.image_outlined;
 
   IconData get view => Icons.visibility;
+
+  IconData get copy => Icons.copy_rounded;
+
+  IconData get qr => Icons.qr_code;
 
   IconData get viewOff => Icons.visibility_off;
 

@@ -1,6 +1,5 @@
-import 'package:advisor_app/data/repository.dart';
-
 import '../ui.dart';
+import 'repository.dart';
 
 class AppRepositoryProvider extends Provider<AppRepository> {
   AppRepositoryProvider({

@@ -1,6 +1,4 @@
 import 'package:advisor_app/ui.dart';
-import 'package:advisor_app/views/widgets/app_progress_indicator.dart';
-import 'package:advisor_app/views/widgets/extensions.dart';
 
 mixin StateMixin<T extends StatefulWidget> on State<T> {
   GlobalKey<ScaffoldState>? _scaffoldKey;

@@ -1,4 +1,4 @@
-import 'package:advisor_app/core/api/api_client.dart';
+import '../core/api/api_client.dart';
 
 class ApiClientImpl extends ApiClient {
   static const String _default =

@@ -1,10 +1,11 @@
 import 'dart:convert';
 
-import 'package:advisor_app/core/exceptions/exceptions.dart';
-import 'package:advisor_app/model/api_error.dart';
-import 'package:advisor_app/shared.dart';
 import 'package:http/http.dart';
 import 'package:http/io_client.dart';
+
+import '../../model/api_error.dart';
+import '../../shared.dart';
+import '../exceptions/exceptions.dart';
 
 extension ResponseUtils on Response {
   bool get isSuccess {

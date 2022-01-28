@@ -1,4 +1,4 @@
-import 'package:advisor_app/ui.dart';
+import '../../ui.dart';
 
 class AppPrimaryButton extends StatelessWidget {
   const AppPrimaryButton({Key? key, this.onPressed, required this.child})

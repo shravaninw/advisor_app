@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:advisor_app/core/api/api_client.dart';
-import 'package:advisor_app/model/auth_login.dart';
 import 'package:http/src/response.dart';
 
+import '../core/api/api_client.dart';
 import '../core/services/auth_service.dart';
+import '../model/auth_login.dart';
 import 'api_client_impl.dart';
 
 class _ApiUrls {

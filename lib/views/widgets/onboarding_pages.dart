@@ -1,6 +1,5 @@
-import 'package:advisor_app/views/widgets/app_buttons.dart';
-
 import '../../ui.dart';
+import 'app_buttons.dart';
 import 'onboarding_page.dart';
 
 class OnBoardingPages extends StatefulWidget {

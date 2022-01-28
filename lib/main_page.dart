@@ -1,7 +1,8 @@
-import 'package:advisor_app/ui.dart';
-import 'package:advisor_app/views/home_page.dart';
-import 'package:advisor_app/views/widgets/app_buttons.dart';
-import 'package:advisor_app/views/widgets/onboarding_page.dart';
+import 'ui.dart';
+import 'views/home_page/chat_page.dart';
+import 'views/home_page/links_page.dart';
+import 'views/home_page/more_page.dart';
+import 'views/home_page/prospects_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -13,19 +14,10 @@ class MainPage extends StatefulWidget {
 class _MainPageState extends State<MainPage> {
   int _selectedIndex = 0;
   static List<Widget> _widgetOptions = <Widget>[
-    HomePage(title: 'Home Page'),
-    OnBoardingPage(
-      buttonText: AppText('Skip'),
-      loadingValue: 0,
-      title: 'Fin System',
-      description:
-          'Watch videos to understand the important building blocks of a financial house.',
-      button: NextPrimaryButton(
-        onPressed: () {},
-      ),
-    ),
-    Text('3'),
-    Text('4'),
+    ProspectsPage(),
+    ChatPage(),
+    LinksPage(),
+    MorePage(),
   ];
 
   void _onItemTapped(int index) {

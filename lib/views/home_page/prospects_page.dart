@@ -1,44 +1,36 @@
-import 'package:advisor_app/ui.dart';
-import 'package:advisor_app/views/widgets/app_buttons.dart';
-import 'package:advisor_app/views/widgets/app_text_form_field.dart';
-import 'package:advisor_app/views/widgets/form_tile.dart';
+import '../../ui.dart';
+import '../widgets/app_buttons.dart';
+import '../widgets/app_text_form_field.dart';
+import '../widgets/form_tile.dart';
+import 'app_bar.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key, this.title}) : super(key: key);
-
-  final String? title;
+class ProspectsPage extends StatefulWidget {
+  const ProspectsPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _ProspectsPageState createState() => _ProspectsPageState();
 }
 
-class _HomePageState extends State<HomePage> with AppProviderMixin<HomePage> {
+class _ProspectsPageState extends State<ProspectsPage>
+    with AppProviderMixin<ProspectsPage> {
   String email = '';
   String password = '';
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
+    return AppScaffold(
+      appBar: CustomAppBar(
+        toolbarHeight: 80,
+        titleSpacing: 16,
         centerTitle: false,
-        leading: Padding(
-          padding: const EdgeInsets.all(4.0),
-          child: Container(
-            height: 42,
-            width: 42,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              color: colors.primary.withOpacity(0.2),
-            ),
-            child: Icon(
-              Icons.settings,
-              color: colors.primary,
-            ),
-          ),
-        ),
         foregroundColor: colors.black,
         backgroundColor: colors.white,
-        title: AppText(widget.title ?? ''),
+        title: HomeAppBar(
+          title: 'Prospects',
+          icon: icons.search,
+        ),
       ),
       body: Center(
         child: Column(
